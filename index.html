@@ -128,7 +128,7 @@
         <ul>
             <li><a class="nav-dropdown" data-toggle="collapse" href="#building-cpp-projects" aria-expanded="false" aria-controls="building-cpp-projects">C++</a>
                 <ul id="building-cpp-projects">
-                    <li><a href="https://guides.gradle.org/building-cpp-executables/">Building C++ Executables</a></li>
+                    <li><a href="https://guides.gradle.org/building-cpp-applications/">Building C++ Applications</a></li>
                     <li><a href="https://guides.gradle.org/building-cpp-libraries/">Building C++ Libraries</a></li>
                 </ul>
             </li>
@@ -535,10 +535,10 @@ BUILD SUCCESSFUL</pre>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="http://openjdk.java.net/projects/jigsaw/quick-start">Module System Quick-Start Guide</a> (at least)</p>
+<p><a href="https://openjdk.java.net/projects/jigsaw/quick-start">Module System Quick-Start Guide</a> (at least)</p>
 </li>
 <li>
-<p><a href="http://openjdk.java.net/projects/jigsaw/spec/sotms/">The State of The Module System</a> (for more details)</p>
+<p><a href="https://openjdk.java.net/projects/jigsaw/spec/sotms/">The State of The Module System</a> (for more details)</p>
 </li>
 </ul>
 </div>
@@ -643,8 +643,8 @@ requires the <code>guava</code> module. The Guava jar files are not yet Java 9 m
 so when you require them, you have to use the automatic module name <code>guava</code>
 which the JVM infers from the filename of the jar file which contains the
 classes. For Guava, the jar file&#8217;s name is
-<a href="http://central.maven.org/maven2/com/google/guava/guava/22.0/">guava-22.0.jar</a>, so according to the
-<a href="http://openjdk.java.net/projects/jigsaw/spec/sotms/#automatic-modules">rules of automatic module names</a>,
+<a href="https://repo.maven.apache.org/maven2/com/google/guava/guava/22.0/">guava-22.0.jar</a>, so according to the
+<a href="https://openjdk.java.net/projects/jigsaw/spec/sotms/#automatic-modules">rules of automatic module names</a>,
 you require <code>guava</code>.</p>
 </div>
 </div>
@@ -848,7 +848,7 @@ one module on the module path to include any specific package.</p>
 </div>
 <div class="paragraph">
 <p>The whole situation can get quite messy. This is why
-<a href="http://blog.joda.org/2017/05/java-se-9-jpms-automatic-modules.html">Stephen Colebourne argues</a>
+<a href="https://blog.joda.org/2017/05/java-se-9-jpms-automatic-modules.html">Stephen Colebourne argues</a>
 that we should immediately start updating all of the jars we publish to public
 repositories to (at least) specify an <code>Automatic-Module-Name</code> attribute in
 the jar&#8217;s manifest, and not to publish any artifacts which
