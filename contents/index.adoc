@@ -8,7 +8,6 @@ need to change in your Java application to:
 * consume Java 9 modules as your dependencies.
 * use Java's `ServiceLoader` pattern with Java 9 modules.
 * run an application using Java 9 modules.
-* use an experimental plugin to do all of this more simply.
 
 While Gradle version {gradle-version} doesn't have first-class support for
 Java 9 modules yet, this guide shows you how to experiment with them before that
@@ -621,43 +620,18 @@ Since the `fairy` project's `module-info.java` declares that it
 have access to any implementations provided at runtime by Java 9 modules
 that declare `provides org.gradle.fairy.tale.Tale`.
 
-== Step 4 - Use the `experimental-jigsaw` plugin to do the same thing
-
-While Gradle does not yet support building Java 9 modules as a first-class
-feature of the Java plugins, an experimental plugin is available to allow you to
-experiment with Java 9 modules on your projects.
-
-The `org.gradle.java.experimental-jigsaw` plugin is simply a convenient
-mechanism for applying all of the changes in steps 1 through 3 of this guide
-in one step. It *may* work for your project, but you should definitely
-consider it experimental and not fit for production builds.
-
-Here's how to use the plugin:
-
-.actors/build.gradle
-[source,groovy]
-----
-include::{plugindir}/actors/build.gradle[tags=plugins]
-----
-<1> Just use https://plugins.gradle.org/plugin/org.gradle.java.experimental-jigsaw[the plugin].
-
-and:
-
-.actors/build.gradle
-[source,groovy]
-----
-include::{plugindir}/actors/build.gradle[tags=moduleName]
-----
-<1> Change the line that specifies the module name to use the new `javaModule.name` settings.
-
 == Summary
 
 At this point, your application is taking advantage of most of the
 features of the Java 9 module system. This guide has shown you how to modify
 the tasks added by the regular `java-library` and `application` plugins to get
-them work on with Java 9 modules. In the future, the Gradle team will be adding
-first-class support for the module system, but you can begin experimenting
-today!
+them work on with Java 9 modules.
 
+There are various third party plugins which support building modular Java applications:
+
+* https://plugins.gradle.org/plugin/com.zyxist.chainsaw[com.zyxist.chainsaw]
+* https://plugins.gradle.org/plugin/org.javamodularity.moduleplugin[org.javamodularity.moduleplugin]
+
+In the future, the Gradle team will be adding first-class support for the module system, but you can begin experimenting today!
 
 include::contribute[repo-path="gradle-guides/building-java-9-modules"]
