@@ -265,17 +265,11 @@ reuse the same code later for other modules without having to change it.
 <2> Clears the `classpath` property by creating an empty file collection
 
 When compiling a Java 9 module, you want to use `--module-path` instead of
-`--classpath` to read your dependencies. So in the `doFirst` block, you are
-clearing out the `classpath` property of the task and adding a compiler
-argument.
+`--classpath` to read your dependencies.
 
-* `--module-path` is set to the value that would have been the `classpath`. This
+* `--module-path` is set to the value of the `classpath`. This
   makes sense because the classpath already has any jars or class output
   directories of libraries on which you depend.
-
-NOTE: The reason you modify `options.compilerArgs` inside the `doFirst` block
-instead of in the configuration block of the `compileJava` task is because you
-only want resolve the `compileClasspath` configuration when executing that task.
 
 === Modify the `compileTestJava` task to locally alter the module
 

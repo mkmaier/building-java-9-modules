@@ -1,9 +1,9 @@
 subprojects {
-    afterEvaluate {
-        repositories {
-            jcenter()
-        }
+    repositories {
+        jcenter()
+    }
 
+    afterEvaluate {
         // tag::autoModuleName[]
         jar {
             inputs.property("moduleName", moduleName)
